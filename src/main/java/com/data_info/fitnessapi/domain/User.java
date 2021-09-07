@@ -12,6 +12,7 @@ import javax.persistence.*;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
@@ -54,9 +55,9 @@ public class User extends BaseEntity{
     private String link;
 
     @ApiModelProperty(value="사용자 자기소개")
-    private String desc;
+    private String description;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @ToString.Exclude
     private Fitness fitness;
 

@@ -7,9 +7,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-import java.util.List;
-
 @RepositoryRestResource
 public interface FitnessRepository extends JpaRepository<Fitness,Long> {
-    Page<Fitness> findAllByProvince(String province, Pageable pageable,Sort sort);
+    Page<Fitness> findAllByProvince(String province, Pageable pageable);
 }

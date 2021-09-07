@@ -9,6 +9,7 @@ import com.data_info.fitnessapi.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,11 +19,14 @@ import java.util.stream.IntStream;
 @SpringBootApplication
 public class FitnessApiApplication {
 
+
+
     public static void main(String[] args) {
         SpringApplication.run(FitnessApiApplication.class, args);
     }
 
     //CommandLineRunner로 테스트 데이터 넣기
+    @Bean
     public CommandLineRunner commandLineRunner(UserRepository userRepository,
                                                FitnessRepository fitnessRepository){
         return (args -> {
@@ -30,6 +34,7 @@ public class FitnessApiApplication {
 
             User user1=User.builder()
                     .name("김길동")
+                    .description("김길동입니다!")
                     .age(30)
                     .gender(Gender.MALE)
                     .grade(Grade.ceo)
