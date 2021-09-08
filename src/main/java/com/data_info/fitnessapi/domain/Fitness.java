@@ -1,7 +1,6 @@
 package com.data_info.fitnessapi.domain;
 
 import com.data_info.fitnessapi.domain.listener.EntityListener;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 
@@ -17,7 +16,6 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @EntityListeners(value={EntityListener.class})
-@ApiModel(value="피트니스 센터 정보")
 public class Fitness extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

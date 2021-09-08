@@ -1,5 +1,10 @@
 server:
   port: 8089
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
 
 spring:
   jpa:
@@ -27,3 +32,4 @@ spring:
       base-path: /api
       default-page-size: 10
       max-page-size: 10
+#Encoding UTF-8

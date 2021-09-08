@@ -3,8 +3,6 @@ package com.data_info.fitnessapi.domain;
 import com.data_info.fitnessapi.domain.enums.Gender;
 import com.data_info.fitnessapi.domain.enums.Grade;
 import com.data_info.fitnessapi.domain.listener.EntityListener;
-import com.data_info.fitnessapi.domain.listener.Utility;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 
@@ -18,7 +16,6 @@ import javax.persistence.*;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @EntityListeners(value={EntityListener.class})
-@ApiModel(value="사이트 회원 정보")
 public class User extends BaseEntity{
 
     @Id

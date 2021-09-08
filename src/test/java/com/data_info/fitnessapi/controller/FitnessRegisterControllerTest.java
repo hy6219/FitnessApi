@@ -1,7 +1,5 @@
 package com.data_info.fitnessapi.controller;
 
-import com.data_info.fitnessapi.repository.FitnessRepository;
-import com.data_info.fitnessapi.repository.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,21 +22,25 @@ class FitnessRegisterControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    /*
-    * Error creating bean with name 'commandLineRunner'
-    * defined in com.data_info.fitnessapi.FitnessApiApplication
-    * */
-
-    @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
-    private FitnessRepository fitnessRepository;
 
     @Test
-    public void getFitnessRegTest() throws Exception {
+    public void getUsersTest() throws Exception {
         mockMvc.perform(
-                MockMvcRequestBuilders.get("http://localhost:8089/api/fitness")
+                MockMvcRequestBuilders.get("http://localhost:8089/api/users")
+
+        ).andExpect(
+                MockMvcResultMatchers.status().is2xxSuccessful()
+        ).andDo(
+                MockMvcResultHandlers.print()
+        );
+    }
+
+    @Test
+    public void getFitnessTest() throws Exception {
+        mockMvc.perform(
+                MockMvcRequestBuilders.get("http://localhost:8089/api/fitnesses")
+                        .queryParam("province","서울특별시")
+
         ).andDo(
                 MockMvcResultHandlers.print()
         );
