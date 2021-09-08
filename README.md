@@ -5,7 +5,7 @@ REST API 서비스입니다
 
 ### 목적 : Spring data rest (with HATEOAS)를 적용한 피트니스 센터 정보에 대한 REST API 구축
 
-❤ 사용한 기술 및 도구
+### ❤ 사용한 기술 및 도구
 
 - SpringBoot
 - Spring data rest
